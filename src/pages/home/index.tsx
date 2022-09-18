@@ -1,5 +1,10 @@
+import useNewReleases from "../../hooks/useNewReleases";
+
 function Home() {
-  return <div>Home</div>;
+  const { newReleases } = useNewReleases();
+  console.log(newReleases);
+
+  return <div></div>;
 }
 
 export default Home;
