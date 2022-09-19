@@ -35,7 +35,7 @@ exports.handler = async (event, context) => {
   const redirectParams = new URLSearchParams();
   redirectParams.append("access_token", data.access_token);
   redirectParams.append("refresh_token", data.refresh_token);
-  redirectParams.append("expires_in", data.expires_in.toString());
+  redirectParams.append("expires_in", data.expires_in?.toString());
 
   return {
     statusCode: 302,
