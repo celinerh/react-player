@@ -4,7 +4,21 @@ function Home() {
   const { newReleases } = useNewReleases();
   console.log(newReleases);
 
-  return <div></div>;
+  return (
+    <div>
+      {newReleases &&
+        newReleases.albums.items.map((item: any) => (
+          <div key={item.id}>
+            <h1>{item.name}</h1>
+            <div>
+              {item.artists.map((artist: any) => (
+                <p key={artist.id}>{artist.name}</p>
+              ))}
+            </div>
+          </div>
+        ))}
+    </div>
+  );
 }
 
 export default Home;
