@@ -12,7 +12,7 @@ const useNewReleases = () => {
       return;
     }
 
-    fetch(`https://api.spotify.com/v1/browse/new-releases`, {
+    fetch(`https://api.spotify.com/v1/browse/new-releases?limit=4`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authTokens?.accessToken}`,
