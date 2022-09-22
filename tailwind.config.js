@@ -9,8 +9,9 @@ module.exports = {
       colors: {
         primary: "#FF1168",
         secondary: "#341931",
-        gradientR: "#EE0979",
-        gradientL: "#FF6400",
+        additional: "#111625",
+        gradientL: "#EE0979",
+        gradientR: "#FF6400",
       },
     },
   },
