@@ -13,6 +13,9 @@ module.exports = {
         gradientL: "#EE0979",
         gradientR: "#FF6400",
       },
+      boxShadow: {
+        top: "0 0px 15px 2px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],
