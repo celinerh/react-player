@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Playing from "./pages/playing";
 import Login from "./pages/login";
 import { TokenProvider } from "./contexts/AuthContext";
-import Featured from "./pages/home";
+import Featured from "./pages/featured";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
