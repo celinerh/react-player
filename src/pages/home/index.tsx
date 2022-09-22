@@ -3,7 +3,7 @@ import Heading from "../../components/Heading";
 import Title from "../../components/Title";
 import useNewReleases from "../../hooks/useNewReleases";
 
-function Home() {
+function Featured() {
   const { newReleases } = useNewReleases();
   console.log(newReleases);
 
@@ -33,4 +33,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Featured;

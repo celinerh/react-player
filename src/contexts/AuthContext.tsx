@@ -37,7 +37,7 @@ export const TokenProvider = ({ children }: { children: React.ReactNode }) => {
         refreshToken,
         expiresIn: parseInt(expiresIn),
       });
-      window.history.pushState({}, "", "/home");
+      window.history.pushState({}, "", "/featured");
     }
   }, [query]);
 

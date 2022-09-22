@@ -40,7 +40,7 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 302,
     headers: {
-      Location: `http://localhost:8888/home?${redirectParams.toString()}`,
+      Location: `http://localhost:8888/featured?${redirectParams.toString()}`,
     },
     body: JSON.stringify({}),
   };
