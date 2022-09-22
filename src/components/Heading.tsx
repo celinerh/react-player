@@ -2,7 +2,7 @@ import React from "react";
 
 function Heading({ title }: { title: string }) {
   return (
-    <h1 className="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gradientR to-gradientL w-fit">
+    <h1 className="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gradientL to-gradientR w-fit">
       {title}
     </h1>
   );
