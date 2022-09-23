@@ -18,7 +18,6 @@ function Login() {
       <h1 className="mt-2 text-3xl font-bold mb-80">Log In</h1>
 
       <a
-        // href={AUTH_URL}
         href={`https://accounts.spotify.com/authorize?${params.toString()}`}
         className="flex items-center gap-4 px-8 py-3 mx-auto text-white bg-green-500 rounded-lg w-fit"
       >
