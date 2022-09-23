@@ -9,7 +9,7 @@ function Featured() {
 
   return (
     <div>
-      <Heading title="All Albums" />
+      <Heading title="Featured" />
       <Title title="New Releases" />
       <div className="grid grid-cols-2 gap-6">
         {newReleases &&
