@@ -1,10 +1,10 @@
 import AlbumCard from "../../components/AlbumCard";
 import Heading from "../../components/Heading";
 import Title from "../../components/Title";
-import useNewReleases from "../../hooks/useNewReleases";
+import useAlbumNewReleases from "../../hooks/useAlbumNewReleases";
 
 function Featured() {
-  const { newReleases } = useNewReleases();
+  const { newReleases } = useAlbumNewReleases();
   console.log(newReleases);
 
   return (

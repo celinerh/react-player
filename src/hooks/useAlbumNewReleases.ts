@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useToken } from "../contexts/AuthContext";
 
-const useNewReleases = () => {
+const useAlbumNewReleases = () => {
   const [newReleases, setNewReleases] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
@@ -39,4 +39,4 @@ const useNewReleases = () => {
   return { newReleases, error, isPending, setNewReleases };
 };
 
-export default useNewReleases;
+export default useAlbumNewReleases;
