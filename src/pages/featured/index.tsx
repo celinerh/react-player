@@ -26,6 +26,7 @@ function Featured() {
               key={album.id}
               title={album.name}
               imageSource={album.images[0].url}
+              artists={album.artists.map((artist: any) => artist.name)}
             />
           ))}
       </div>
