@@ -5,7 +5,6 @@ import useAlbumNewReleases from "../../hooks/useAlbumNewReleases";
 
 function Featured() {
   const { newReleases } = useAlbumNewReleases();
-  console.log(newReleases);
 
   return (
     <div>
