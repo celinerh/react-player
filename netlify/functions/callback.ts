@@ -1,5 +1,4 @@
 import fetch from "node-fetch";
-import { json } from "stream/consumers";
 
 exports.handler = async (event, context) => {
   const GRANT_TYPE = "authorization_code";
