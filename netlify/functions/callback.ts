@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
-  const GRANT_TYPE = "authorization_code";
   const CODE = event.queryStringParameters.code;
   const REDIRECT_URI = "http://localhost:8888/.netlify/functions/callback";
+  const GRANT_TYPE = "authorization_code";
   const CLIENT_ID = "b27850c09d1a4ebf9e6fe3ebde9e4278";
   const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
