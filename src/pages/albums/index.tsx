@@ -1,7 +1,5 @@
-import React from "react";
 import AlbumCard from "../../components/AlbumCard";
 import Heading from "../../components/Heading";
-import Title from "../../components/Title";
 import useSavedAlbums from "../../hooks/useSavedAlbums";
 
 function Albums() {

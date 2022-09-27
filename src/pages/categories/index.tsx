@@ -1,4 +1,3 @@
-import React from "react";
 import AlbumCard from "../../components/AlbumCard";
 import Heading from "../../components/Heading";
 import useCategories from "../../hooks/useCategories";
