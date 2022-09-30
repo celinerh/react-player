@@ -7,7 +7,14 @@ function Header({ title }: { title: string }) {
 
   return (
     <div className="grid items-center grid-cols-3 p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white">
-      {title !== "featured" && <IoIosArrowBack className="mr-auto" />}
+      {!["featured", "albums", "playlists"].includes(title) && (
+        <IoIosArrowBack
+          className="mr-auto"
+          onClick={() => {
+            navigate(-1);
+          }}
+        />
+      )}
       {title === "featured" && (
         <IoLogOutOutline
           className="mr-auto"
