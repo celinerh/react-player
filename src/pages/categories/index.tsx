@@ -14,6 +14,9 @@ function Categories() {
           categories.categories.items.map((category: any) => (
             <AlbumCard
               key={category.id}
+              type="category"
+              href={category.href}
+              id={category.id}
               title={category.name}
               imageSource={category.icons[0].url}
               artists={[category.name]}

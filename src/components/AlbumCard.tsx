@@ -1,16 +1,26 @@
+import { Link } from "react-router-dom";
 import RoundedImage from "./RoundedImage";
 
 function AlbumCard({
+  type,
+  href,
+  id,
   title,
   imageSource,
   artists,
 }: {
+  type: string;
+  href: string;
+  id: string;
   title: string;
   imageSource: string;
   artists: Array<any>;
 }) {
   return (
-    <div className="grid grid-cols-1 grid-rows-1 drop-shadow-md">
+    <Link
+      to={`/${type}/${id}`}
+      className="grid grid-cols-1 grid-rows-1 drop-shadow-md"
+    >
       <RoundedImage
         className="col-span-full row-span-full"
         imageSource={imageSource}
@@ -20,7 +30,7 @@ function AlbumCard({
         <h1 className="font-bold ">{title}</h1>
         <p className="text-[0.7rem] font-light">{artists.join(", ")}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

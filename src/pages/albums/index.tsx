@@ -4,6 +4,7 @@ import useSavedAlbums from "../../hooks/useSavedAlbums";
 
 function Albums() {
   const { savedAlbums } = useSavedAlbums();
+  console.log(savedAlbums);
 
   return (
     <div>
@@ -13,6 +14,9 @@ function Albums() {
           savedAlbums.items.map((album: any) => (
             <AlbumCard
               key={album.album.id}
+              type="album"
+              href={album.album.href}
+              id={album.album.id}
               title={album.album.name}
               imageSource={album.album.images[0].url}
               artists={album.album.artists.map((artist: any) => artist.name)}
