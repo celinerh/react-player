@@ -9,7 +9,7 @@ function RoundedImage({
 }) {
   return (
     <img
-      className={`rounded-lg ${className}`}
+      className={`rounded-lg h-full ${className}`}
       src={imageSource}
       alt={`${alt} album cover`}
       title={`${alt} album cover`}
