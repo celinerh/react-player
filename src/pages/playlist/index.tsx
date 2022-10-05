@@ -19,6 +19,7 @@ function Playlist() {
             <Track
               key={track.id}
               name={track.track.name}
+              trackURL={track.track.preview_url}
               artists={track.track.artists.map((artist: any) => artist.name)}
               duration={track.track.duration_ms}
             />
