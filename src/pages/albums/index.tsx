@@ -4,7 +4,6 @@ import useSavedAlbums from "../../hooks/useSavedAlbums";
 
 function Albums() {
   const { savedAlbums } = useSavedAlbums();
-  console.log(savedAlbums);
 
   return (
     <div>

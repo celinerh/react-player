@@ -4,7 +4,6 @@ import useCategories from "../../hooks/useCategories";
 
 function Categories() {
   const { categories } = useCategories();
-  console.log(categories);
 
   return (
     <div>
