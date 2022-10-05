@@ -6,7 +6,7 @@ function Albums() {
   const { savedAlbums } = useSavedAlbums();
 
   return (
-    <div>
+    <div className="page-wrapper">
       <Heading title="Albums" />
       <div className="grid grid-cols-2 gap-6">
         {savedAlbums &&

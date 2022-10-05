@@ -6,7 +6,7 @@ function Categories() {
   const { categories } = useCategories();
 
   return (
-    <div>
+    <div className="page-wrapper">
       <Heading title="Categories" />
       <div className="grid grid-cols-2 gap-6">
         {categories &&

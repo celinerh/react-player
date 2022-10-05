@@ -10,7 +10,7 @@ function Playlist() {
   );
 
   return (
-    <div>
+    <div className="page-wrapper">
       <Title title="All Songs" />
 
       <div className="flex flex-col gap-3">

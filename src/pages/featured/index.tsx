@@ -9,7 +9,7 @@ function Featured() {
   const { featuredPlaylists } = useFeaturedPlaylists();
 
   return (
-    <div>
+    <div className="page-wrapper">
       <Heading title="Featured" />
       <Title title="New Releases" />
       <div className="grid grid-cols-2 gap-6">

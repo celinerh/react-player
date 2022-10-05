@@ -6,7 +6,7 @@ function Playlists() {
   const { playlists } = usePlaylists();
 
   return (
-    <div>
+    <div className="page-wrapper">
       <Heading title="Playlists" />
       <div className="grid grid-cols-2 gap-6">
         {playlists &&
