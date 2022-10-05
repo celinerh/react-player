@@ -1,18 +1,37 @@
 import { IoPlay } from "react-icons/io5";
+import { usePlayer } from "../contexts/PlayerContext";
 import { formatToISODuration } from "../utils/formatToISODuration ";
 
 function Track({
   name,
+  trackURL,
   artists,
   duration,
 }: {
   name: string;
+  trackURL: string;
   artists: string[];
   duration: number;
 }) {
+  const { setPlayer } = usePlayer();
+
   return (
     <div className="flex gap-4 text-sm">
-      <div className="flex items-center justify-center w-full h-8 max-w-[2rem] rounded-full place-self-center bg-gradient-to-r from-gradientL to-gradientR">
+      <div
+        className="flex items-center justify-center w-full h-8 max-w-[2rem] rounded-full place-self-center bg-gradient-to-r from-gradientL to-gradientR"
+        onClick={() => {
+          if (!setPlayer) {
+            return;
+          }
+
+          setPlayer({
+            name: name,
+            href: trackURL,
+            artists: artists.join(", "),
+            currentTime: 0,
+          });
+        }}
+      >
         <IoPlay className="text-white dark:text-additional" />
       </div>
       <div className="w-full">
