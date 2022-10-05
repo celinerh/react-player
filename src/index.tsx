@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Playing from "./pages/playing";
 import Login from "./pages/login";
 import { TokenProvider } from "./contexts/AuthContext";
 import Featured from "./pages/featured";
@@ -14,6 +13,7 @@ import Album from "./pages/album";
 import Playlist from "./pages/playlist";
 import Category from "./pages/category";
 import { PlayerProvider } from "./contexts/PlayerContext";
+import Playing from "./pages/playing";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

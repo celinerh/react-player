@@ -2,39 +2,51 @@ import AudioPlayer from "react-h5-audio-player";
 import { IoCloseOutline, IoPauseOutline, IoPlay } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { usePlayer } from "../contexts/PlayerContext";
+import "../minifiedPlayer.css";
 import "../player.css";
+import useCurrentRoute from "../hooks/useCurrentPath";
 
 function Player() {
+  const { currentPath } = useCurrentRoute();
   const { player, setPlayer } = usePlayer();
   const navigate = useNavigate();
 
-  const setCurrentTime = (meta: any) => {
-    if (!setPlayer) {
-      return;
-    }
+  const isPlayingPath = currentPath === "playing";
 
-    const { currentTime } = meta.target;
+  const minifiedPlayerProps = {
+    showJumpControls: false,
+    customIcons: {
+      play: <IoPlay />,
+      pause: <IoPauseOutline />,
+    },
+  };
 
-    setPlayer((prev) => ({
-      ...prev,
-      currentTime: currentTime,
-    }));
+  const playerProps = {
+    //showJumpControls: false,
   };
 
   return (
     <div
-      className={`p-3 bg-red-50 ${
-        !player.href && "absolute opacity-0 pointer-events-none"
-      }`}
+      className={
+        isPlayingPath
+          ? `page-wrapper`
+          : `p-3 bg-red-50 ${
+              !player.href && "absolute opacity-0 pointer-events-none"
+            }`
+      }
     >
       <div
-        className="w-8 h-1 mx-auto bg-zinc-400"
+        className={isPlayingPath ? "hidden" : "w-8 h-1 mx-auto bg-zinc-400"}
         onClick={() => {
           navigate("/playing");
         }}
       ></div>
 
-      <div className="flex items-center justify-between">
+      <div
+        className={
+          isPlayingPath ? "text-center" : "flex items-center justify-between"
+        }
+      >
         <div>
           <p className="text-sm font-semibold">{player.name}</p>
           <p className="text-xs">{player.artists}</p>
@@ -42,21 +54,23 @@ function Player() {
 
         <div className="flex justify-end gap-2 mt-3 text-3xl">
           <AudioPlayer
-            className="player"
+            className={isPlayingPath ? "" : "minifiedPlayer"}
             autoPlay={true}
             src={player.href ?? ""}
             onPlay={(e) => console.log("onPlay")}
-            showJumpControls={false}
             customVolumeControls={[]} // remove volume controls
             customAdditionalControls={[]} // remove additional controls: loop button
-            customIcons={{
-              play: <IoPlay />,
-              pause: <IoPauseOutline />,
-            }}
-            onListen={setCurrentTime}
+            // customIcons={{
+            //   play: <IoPlay />,
+            //   pause: <IoPauseOutline />,
+            // }}
+
+            {...(isPlayingPath && { ...playerProps })}
+            {...(!isPlayingPath && { ...minifiedPlayerProps })}
           />
 
           <IoCloseOutline
+            className={isPlayingPath ? "hidden" : ""}
             onClick={() => {
               if (!setPlayer) {
                 return;

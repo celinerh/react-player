@@ -10,10 +10,8 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header title={currentPath} />
-      <div className="h-full p-6 overflow-scroll dark:bg-secondary">
-        <Outlet />
-      </div>
-      {currentPath !== "playing" && <Player />}
+      <Outlet />
+      <Player />
       <Navigation />
     </div>
   );
