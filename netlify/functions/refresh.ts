@@ -6,8 +6,6 @@ exports.handler = async (event, context) => {
   const { refreshToken } = JSON.parse(event.body);
   const URL = `https://accounts.spotify.com/api/token`;
 
-  console.log("refresh_token", refreshToken);
-
   const params = new URLSearchParams();
   params.append("grant_type", "refresh_token");
   params.append("refresh_token", refreshToken);
