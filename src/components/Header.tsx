@@ -7,7 +7,7 @@ function Header({ title }: { title: string }) {
 
   return (
     <div className="grid items-center grid-cols-3 p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white">
-      {!["featured", "albums", "playlists"].includes(title) && (
+      {!["featured", "albums", "playlists", "categories"].includes(title) && (
         <IoIosArrowBack
           className="mr-auto"
           onClick={() => {
