@@ -19,6 +19,7 @@ function Album() {
             <Track
               key={track.id}
               name={track.name}
+              trackURL={track.preview_url}
               artists={track.artists.map((artist: any) => artist.name)}
               duration={track.duration_ms}
             />
