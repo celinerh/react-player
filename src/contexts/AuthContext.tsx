@@ -41,6 +41,31 @@ export const TokenProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [query]);
 
+  useEffect(() => {
+    if (!authTokens.refreshToken || !authTokens.expiresIn) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      fetch("http://localhost:8888/.netlify/functions/refresh", {
+        method: "POST",
+        body: JSON.stringify({
+          refreshToken: authTokens.refreshToken,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setAuthTokens({
+            ...authTokens,
+            accessToken: data.access_token,
+            expiresIn: data.expires_in,
+          });
+        });
+    }, (authTokens.expiresIn - 60) * 1000);
+
+    return () => clearInterval(interval);
+  }, [authTokens.refreshToken, authTokens.expiresIn]);
+
   return (
     <AuthContext.Provider
       value={{
