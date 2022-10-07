@@ -12,7 +12,7 @@ function Featured() {
     <div className="page-wrapper">
       <Heading title="Featured" />
       <Title title="New Releases" />
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 mb-20">
         {newReleases &&
           newReleases.albums.items.map((album: any) => (
             <AlbumCard
