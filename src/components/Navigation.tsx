@@ -1,8 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { IoPulseOutline, IoGrid, IoContrastOutline } from "react-icons/io5";
 import { IoMdList, IoMdWifi } from "react-icons/io";
+import { useTheme } from "../contexts/ThemeContext";
 
 function Navigation() {
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    if (!setTheme) {
+      return;
+    }
+
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
+
   return (
     <nav className="shadow-top">
       <ul className="grid items-center grid-cols-5 p-3 text-2xl dark:bg-additional justify-items-center">
@@ -29,7 +41,7 @@ function Navigation() {
           </NavLink>
         </li>
         <li>
-          <IoContrastOutline className="text-gradientR" />
+          <IoContrastOutline className="text-gradientR" onClick={toggleTheme} />
         </li>
       </ul>
     </nav>
