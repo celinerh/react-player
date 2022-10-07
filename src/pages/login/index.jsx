@@ -14,8 +14,8 @@ params.append(
 
 function Login() {
   return (
-    <div className="flex flex-col p-6 ">
-      <h1 className="mt-2 text-3xl font-bold mb-80">Log In</h1>
+    <div className="flex flex-col h-screen p-6 page-wrapper dark:bg-secondary">
+      <h1 className="mt-2 text-3xl font-bold mb-80 dark:text-white">Log In</h1>
 
       <a
         href={`https://accounts.spotify.com/authorize?${params.toString()}`}
