@@ -16,7 +16,7 @@ function Track({
   const { setPlayer } = usePlayer();
 
   return (
-    <div className="flex gap-4 text-sm">
+    <div className="flex gap-4 text-sm dark:text-white">
       <div
         className="flex items-center justify-center w-full h-8 max-w-[2rem] rounded-full place-self-center bg-gradient-to-r from-gradientL to-gradientR"
         onClick={() => {
@@ -32,7 +32,7 @@ function Track({
           });
         }}
       >
-        <IoPlay className="text-white dark:text-additional" />
+        <IoPlay className="text-white" />
       </div>
       <div className="w-full">
         <p className="font-semibold">{name}</p>

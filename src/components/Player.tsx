@@ -29,14 +29,16 @@ function Player() {
     <div
       className={
         isPlayingPath
-          ? `page-wrapper`
-          : `p-3 bg-red-50 ${
+          ? `page-wrapper dark:text-white`
+          : `p-3 bg-red-50 dark:bg-additional dark:text-white ${
               !player.href && "absolute opacity-0 pointer-events-none"
             }`
       }
     >
       <div
-        className={isPlayingPath ? "hidden" : "w-8 h-1 mx-auto bg-zinc-400"}
+        className={
+          isPlayingPath ? "hidden" : "w-8 h-1 mx-auto bg-zinc-300 rounded-sm"
+        }
         onClick={() => {
           navigate("/playing");
         }}
