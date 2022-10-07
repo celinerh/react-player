@@ -44,7 +44,9 @@ function Player() {
 
       <div
         className={
-          isPlayingPath ? "text-center" : "flex items-center justify-between"
+          isPlayingPath
+            ? "flex flex-col gap-6 text-center"
+            : "flex items-center justify-between"
         }
       >
         <div>
@@ -52,9 +54,13 @@ function Player() {
           <p className="text-xs">{player.artists}</p>
         </div>
 
-        <div className="flex justify-end gap-2 mt-3 text-3xl">
+        <div
+          className={
+            isPlayingPath ? "" : "flex justify-end gap-2 mt-3 text-3xl"
+          }
+        >
           <AudioPlayer
-            className={isPlayingPath ? "" : "minifiedPlayer"}
+            className={isPlayingPath ? "player" : "minifiedPlayer"}
             autoPlay={true}
             src={player.href ?? ""}
             onPlay={(e) => console.log("onPlay")}
