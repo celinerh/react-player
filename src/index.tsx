@@ -15,6 +15,7 @@ import Category from "./pages/category";
 import { PlayerProvider } from "./contexts/PlayerContext";
 import Playing from "./pages/playing";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Search from "./pages/search";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -35,6 +36,7 @@ root.render(
                 <Route path="/featured" element={<Featured />} />
                 <Route path="/categories" element={<Categories />} />
                 <Route path="/categories/:id" element={<Category />} />
+                <Route path="/search" element={<Search />} />
                 <Route path="/playing" element={<Playing />} />
               </Route>
               <Route path="*" element={<Login />} />
