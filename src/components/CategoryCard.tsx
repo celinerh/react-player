@@ -24,7 +24,6 @@ function CategoryCard({
       />
       <div className="flex flex-col justify-end p-2 text-white col-span-full row-span-full w-fit">
         <h1 className="font-bold ">{title}</h1>
-        <p className="text-[0.7rem] font-light">{artists.join(", ")}</p>
       </div>
     </Link>
   );
