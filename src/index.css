@@ -12,6 +12,6 @@
 
 @layer components {
   .page-wrapper {
-    @apply h-full p-6 overflow-scroll dark:bg-secondary;
+    @apply z-10 h-full p-6 overflow-scroll dark:bg-secondary;
   }
 }
