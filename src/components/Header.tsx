@@ -6,7 +6,7 @@ function Header({ title }: { title: string }) {
   const navigate = useNavigate();
 
   return (
-    <div className="grid items-center grid-cols-3 p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white">
+    <div className="z-50 grid items-center grid-cols-3 p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white">
       {!["featured", "albums", "playlists", "categories"].includes(title) && (
         <IoIosArrowBack
           className="mr-auto"
