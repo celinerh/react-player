@@ -34,8 +34,8 @@ function Track({
       >
         <IoPlay className="text-white" />
       </div>
-      <div className="w-full">
-        <p className="font-semibold">{name}</p>
+      <div className="w-[65%]">
+        <p className="font-semibold truncate">{name}</p>
         <p>{artists.join(", ")}</p>
       </div>
       <p className="ml-auto">{formatToISODuration(duration)}</p>
