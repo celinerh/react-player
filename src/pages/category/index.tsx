@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import Heading from "../../components/Heading";
-import PlaylistCard from "../../components/PlaylistCard";
+import RoundedImage from "../../components/RoundedImage";
 import useGetCategorysPlaylists from "../../hooks/useGetCategorysPlaylists";
 
 function Category() {
@@ -11,13 +12,17 @@ function Category() {
       <div className="grid grid-cols-2 gap-6">
         {playlists &&
           playlists.playlists.items.map((playlist: any) => (
-            <PlaylistCard
+            <Link
+              to={`/playlists/${playlist.id}`}
+              className="grid grid-cols-1 grid-rows-1 drop-shadow-md"
               key={playlist.id}
-              id={playlist.id}
-              title={playlist.name}
-              imageSource={playlist.images[0].url}
-              artists={[playlist.owner.display_name]}
-            />
+            >
+              <RoundedImage
+                className="col-span-full row-span-full"
+                imageSource={playlist.images[0].url}
+                alt={playlist.name}
+              />
+            </Link>
           ))}
       </div>
     </div>
