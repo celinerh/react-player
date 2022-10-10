@@ -1,29 +1,36 @@
-import { useParams } from "react-router-dom";
+import AlbumCover from "../../components/AlbumCover";
 import Title from "../../components/Title";
 import Track from "../../components/Track";
-import useGetTracks from "../../hooks/useGetTracks";
+import useAlbum from "../../hooks/useAlbum";
 
 function Album() {
-  const { id } = useParams();
-  const { tracks } = useGetTracks(
-    `https://api.spotify.com/v1/albums/${id}/tracks`
-  );
+  const { album } = useAlbum();
 
   return (
-    <div className="page-wrapper">
-      <Title title="All Songs" />
+    <div className="p-0 page-wrapper">
+      {album && (
+        <AlbumCover
+          imageSource={album?.images[0].url}
+          albumName={album?.name}
+          albumArtists={album?.artists.map((artist: any) => artist.name)}
+          albumTotalTracks={album?.total_tracks}
+        />
+      )}
 
-      <div className="flex flex-col gap-3">
-        {tracks &&
-          tracks.items.map((track: any) => (
-            <Track
-              key={track.id}
-              name={track.name}
-              trackURL={track.preview_url}
-              artists={track.artists.map((artist: any) => artist.name)}
-              duration={track.duration_ms}
-            />
-          ))}
+      <div className="p-6">
+        <Title title="All Songs" />
+        <div className="flex flex-col gap-3">
+          {album &&
+            album.tracks.items.map((track: any) => (
+              <Track
+                key={track.id}
+                name={track.name}
+                trackURL={track.preview_url}
+                artists={track.artists.map((artist: any) => artist.name)}
+                duration={track.duration_ms}
+              />
+            ))}
+        </div>
       </div>
     </div>
   );
