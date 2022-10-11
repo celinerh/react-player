@@ -1,5 +1,4 @@
 function SearchResultsArtists({ artists }: { artists: any }) {
-  console.log("artists", artists);
   return (
     <div className="mt-4 text-xs dark:text-white ">
       {artists?.items?.map((artist: any) => (
