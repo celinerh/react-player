@@ -1,5 +1,3 @@
-import React from "react";
-
 function SearchResultsArtists({ artists }: { artists: any }) {
   console.log("artists", artists);
   return (

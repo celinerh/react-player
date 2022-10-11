@@ -1,5 +1,3 @@
-import React from "react";
-
 function SearchResultsTracks({ tracks }: { tracks: any }) {
   return (
     <div className="mt-4 text-xs dark:text-white">

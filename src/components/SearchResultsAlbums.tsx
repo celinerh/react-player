@@ -1,5 +1,3 @@
-import React from "react";
-
 function SearchResultsAlbums({ albums }: { albums: any }) {
   return (
     <div className="mt-4 text-xs dark:text-white">
