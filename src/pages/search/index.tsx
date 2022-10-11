@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Header from "../../components/Header";
-import SearchResults from "../../components/SearchResults";
 import useSearchForItem from "../../hooks/useSearchForItem";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
