@@ -17,7 +17,7 @@ function Header({
   const navigate = useNavigate();
 
   return (
-    <div className="z-50 flex items-center justify-between p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white min-h-[60px]">
+    <div className="z-50 flex items-center justify-between p-4 text-xl text-zinc-700 dark:bg-secondary dark:text-white min-h-[60px] shadow-bottom">
       {showArrow && (
         <IoIosArrowBack
           className="mr-auto"
