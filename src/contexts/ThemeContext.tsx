@@ -1,6 +1,6 @@
 import React from "react";
 import useLocalStorage from "use-local-storage";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 
 const ThemeContext = createContext<{
   theme: string;

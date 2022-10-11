@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import Heading from "../../components/Heading";
 import Title from "../../components/Title";
 import useAlbumNewReleases from "../../hooks/useAlbumNewReleases";
-import useCurrentPath from "../../hooks/useCurrentPath";
 import useFeaturedPlaylists from "../../hooks/useFeaturedPlaylists";
 
 function Featured() {

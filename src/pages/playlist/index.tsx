@@ -1,5 +1,4 @@
 import Header from "../../components/Header";
-import Heading from "../../components/Heading";
 import Title from "../../components/Title";
 import Track from "../../components/Track";
 import usePlaylist from "../../hooks/usePlaylist";
