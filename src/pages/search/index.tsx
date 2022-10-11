@@ -17,7 +17,7 @@ function Search() {
     <>
       <Header showArrow />
 
-      <div className="pt-0 page-wrapper">
+      <div className="page-wrapper">
         <label className="flex items-center border-b-2 border-gray-300">
           <input
             autoFocus
