@@ -22,9 +22,9 @@ function Playlist() {
 
           <div className="flex flex-col gap-3">
             {playlist &&
-              playlist.tracks.items.map((track: any) => (
+              playlist.tracks.items.map((track: any, i: number) => (
                 <Track
-                  key={track.id}
+                  key={i}
                   name={track.track.name}
                   trackURL={track.track.preview_url}
                   artists={track.track.artists.map(
