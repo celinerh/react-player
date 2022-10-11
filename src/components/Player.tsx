@@ -1,6 +1,6 @@
 import AudioPlayer from "react-h5-audio-player";
 import { IoCloseOutline, IoPauseOutline, IoPlay } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { usePlayer } from "../contexts/PlayerContext";
 import "../minifiedPlayer.css";
 import "../player.css";
@@ -35,14 +35,14 @@ function Player() {
             }`
       }
     >
-      <div
+      <Link
+        to="/playing"
         className={
-          isPlayingPath ? "hidden" : "w-8 h-1 mx-auto bg-zinc-300 rounded-sm"
+          isPlayingPath
+            ? "hidden"
+            : "block w-8 h-1 mx-auto bg-zinc-300 rounded-sm"
         }
-        onClick={() => {
-          navigate("/playing");
-        }}
-      ></div>
+      ></Link>
 
       <div
         className={
