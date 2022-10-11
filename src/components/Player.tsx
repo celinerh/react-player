@@ -65,14 +65,8 @@ function Player() {
             className={isPlayingPath ? "player" : "minifiedPlayer"}
             autoPlay={true}
             src={player.href ?? ""}
-            onPlay={(e) => console.log("onPlay")}
             customVolumeControls={[]} // remove volume controls
             customAdditionalControls={[]} // remove additional controls: loop button
-            // customIcons={{
-            //   play: <IoPlay />,
-            //   pause: <IoPauseOutline />,
-            // }}
-
             {...(isPlayingPath && { ...playerProps })}
             {...(!isPlayingPath && { ...minifiedPlayerProps })}
           />

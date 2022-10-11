@@ -1,8 +1,6 @@
 import React from "react";
 
 function SearchResults({ results }: { results: any }) {
-  console.log("results:", results);
-
   return (
     <div className="text-xs dark:text-white">
       <h2 className="text-xl text-red-500 uppercase">Albums</h2>
