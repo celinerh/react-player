@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useToken } from "../contexts/AuthContext";
+import { useToken } from "../../../contexts/AuthContext";
 
-const useCategories = () => {
-  const [categories, setCategories] = useState<any>();
+const useAlbumNewReleases = () => {
+  const [newReleases, setNewReleases] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
   const { authTokens } = useToken();
@@ -12,7 +12,7 @@ const useCategories = () => {
       return;
     }
 
-    fetch(`https://api.spotify.com/v1/browse/categories`, {
+    fetch(`https://api.spotify.com/v1/browse/new-releases`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authTokens?.accessToken}`,
@@ -26,7 +26,7 @@ const useCategories = () => {
         return response.json();
       })
       .then((data) => {
-        setCategories(data);
+        setNewReleases(data);
         setIsPending(false);
         setError(null);
       })
@@ -36,7 +36,7 @@ const useCategories = () => {
       });
   }, [authTokens?.accessToken]);
 
-  return { categories, error, isPending, setCategories };
+  return { newReleases, error, isPending, setNewReleases };
 };
 
-export default useCategories;
+export default useAlbumNewReleases;

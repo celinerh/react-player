@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useToken } from "../contexts/AuthContext";
+import { useToken } from "../../../contexts/AuthContext";
 
-const useGetCategorysPlaylists = () => {
-  const [playlists, setPlaylists] = useState<any>();
+const useSavedAlbums = () => {
+  const [savedAlbums, setSavedAlbums] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
   const { authTokens } = useToken();
-  const { id } = useParams();
 
   useEffect(() => {
     if (!authTokens?.accessToken) {
       return;
     }
 
-    fetch(`https://api.spotify.com/v1/browse/categories/${id}/playlists`, {
+    fetch(`https://api.spotify.com/v1/me/albums`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authTokens?.accessToken}`,
@@ -28,7 +26,7 @@ const useGetCategorysPlaylists = () => {
         return response.json();
       })
       .then((data) => {
-        setPlaylists(data);
+        setSavedAlbums(data);
         setIsPending(false);
         setError(null);
       })
@@ -38,7 +36,7 @@ const useGetCategorysPlaylists = () => {
       });
   }, [authTokens?.accessToken]);
 
-  return { playlists, error, isPending, setPlaylists };
+  return { savedAlbums, error, isPending, setSavedAlbums };
 };
 
-export default useGetCategorysPlaylists;
+export default useSavedAlbums;

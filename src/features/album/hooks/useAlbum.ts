@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
-import { useToken } from "../contexts/AuthContext";
+import { useParams } from "react-router-dom";
+import { useToken } from "../../../contexts/AuthContext";
 
-const useAlbumNewReleases = () => {
-  const [newReleases, setNewReleases] = useState<any>();
+const useAlbum = () => {
+  const [album, setAlbum] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
   const { authTokens } = useToken();
+  const { id } = useParams();
 
   useEffect(() => {
     if (!authTokens?.accessToken) {
       return;
     }
 
-    fetch(`https://api.spotify.com/v1/browse/new-releases`, {
+    fetch(`https://api.spotify.com/v1/albums/${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authTokens?.accessToken}`,
@@ -26,7 +28,7 @@ const useAlbumNewReleases = () => {
         return response.json();
       })
       .then((data) => {
-        setNewReleases(data);
+        setAlbum(data);
         setIsPending(false);
         setError(null);
       })
@@ -36,7 +38,7 @@ const useAlbumNewReleases = () => {
       });
   }, [authTokens?.accessToken]);
 
-  return { newReleases, error, isPending, setNewReleases };
+  return { album, error, isPending, setAlbum };
 };
 
-export default useAlbumNewReleases;
+export default useAlbum;

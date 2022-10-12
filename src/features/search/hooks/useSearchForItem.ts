@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useToken } from "../contexts/AuthContext";
+import { useToken } from "../../../contexts/AuthContext";
 
 const useSearchForItem = (query: string | null) => {
   const [searchResults, setSearchResults] = useState<any>();

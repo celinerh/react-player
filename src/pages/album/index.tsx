@@ -1,8 +1,8 @@
-import AlbumCover from "../../components/AlbumCover";
+import AlbumCover from "../../features/album/components/AlbumCover";
 import Header from "../../components/Header";
 import Title from "../../components/Title";
 import Track from "../../components/Track";
-import useAlbum from "../../hooks/useAlbum";
+import useAlbum from "../../features/album/hooks/useAlbum";
 
 function Album() {
   const { album } = useAlbum();

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RoundedImage from "./RoundedImage";
+import RoundedImage from "../../../components/RoundedImage";
 
 function CategoryCard({
   id,

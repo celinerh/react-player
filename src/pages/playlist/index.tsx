@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Title from "../../components/Title";
 import Track from "../../components/Track";
-import usePlaylist from "../../hooks/usePlaylist";
+import usePlaylist from "../../features/playlist/hooks/usePlaylist";
 
 function Playlist() {
   const { playlist } = usePlaylist();

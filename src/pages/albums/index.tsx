@@ -1,7 +1,7 @@
-import AlbumCard from "../../components/AlbumCard";
+import AlbumCard from "../../features/album/components/AlbumCard";
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
-import useSavedAlbums from "../../hooks/useSavedAlbums";
+import useSavedAlbums from "../../features/album/hooks/useSavedAlbums";
 
 function Albums() {
   const { savedAlbums } = useSavedAlbums();

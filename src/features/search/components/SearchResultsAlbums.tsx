@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 function SearchResultsAlbums({ albums }: { albums: any }) {
   return (
     <div className="mt-4 text-xs dark:text-white">
       {albums?.items?.map((album: any) => (
-        <div
+        <Link
+          to={`/albums/${album.id}`}
           key={album.id}
           className="flex items-center gap-3 py-2 border-b-[1px] border-white"
         >
@@ -22,7 +25,7 @@ function SearchResultsAlbums({ albums }: { albums: any }) {
               {album.artists.map((artist: any) => artist.name).join(", ")}
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

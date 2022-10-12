@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
 import RoundedImage from "../../components/RoundedImage";
-import useGetCategorysPlaylists from "../../hooks/useGetCategorysPlaylists";
+import useGetCategorysPlaylists from "../../features/category/hooks/useGetCategorysPlaylists";
 
 function Category() {
   const { playlists } = useGetCategorysPlaylists();

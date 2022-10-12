@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useToken } from "../contexts/AuthContext";
+import { useToken } from "../../../contexts/AuthContext";
 
-const usePlaylist = () => {
-  const [playlist, setPlaylist] = useState<any>();
+const useFeaturedPlaylists = () => {
+  const [featuredPlaylists, setFeaturedPlaylists] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
   const { authTokens } = useToken();
-  const { id } = useParams();
 
   useEffect(() => {
     if (!authTokens?.accessToken) {
       return;
     }
 
-    fetch(`https://api.spotify.com/v1/playlists/${id}`, {
+    fetch(`https://api.spotify.com/v1/browse/featured-playlists`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authTokens?.accessToken}`,
@@ -28,7 +26,7 @@ const usePlaylist = () => {
         return response.json();
       })
       .then((data) => {
-        setPlaylist(data);
+        setFeaturedPlaylists(data);
         setIsPending(false);
         setError(null);
       })
@@ -38,7 +36,7 @@ const usePlaylist = () => {
       });
   }, [authTokens?.accessToken]);
 
-  return { playlist, error, isPending, setPlaylist };
+  return { featuredPlaylists, error, isPending, setFeaturedPlaylists };
 };
 
-export default usePlaylist;
+export default useFeaturedPlaylists;

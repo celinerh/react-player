@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Header from "../../components/Header";
-import useSearchForItem from "../../hooks/useSearchForItem";
+import useSearchForItem from "../../features/search/hooks/useSearchForItem";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import "react-tabs/style/react-tabs.css";
 import "../../tabs.css";
-import SearchResultsAlbums from "../../components/SearchResultsAlbums";
-import SearchResultsArtists from "../../components/SearchResultsArtists";
-import SearchResultsTracks from "../../components/SearchResultsTracks";
+import SearchResultsAlbums from "../../features/search/components/SearchResultsAlbums";
+import SearchResultsArtists from "../../features/search/components/SearchResultsArtists";
+import SearchResultsTracks from "../../features/search/components/SearchResultsTracks";
 import { IoSearchOutline } from "react-icons/io5";
 
 function Search() {

@@ -1,7 +1,7 @@
-import CategoryCard from "../../components/CategoryCard";
+import CategoryCard from "../../features/category/components/CategoryCard";
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
-import useCategories from "../../hooks/useCategories";
+import useCategories from "../../features/category/hooks/useCategories";
 
 function Categories() {
   const { categories } = useCategories();

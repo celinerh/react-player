@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
-import RoundedImage from "./RoundedImage";
+import RoundedImage from "../../../components/RoundedImage";
 
-function PlaylistCard({
+function AlbumCard({
+  type,
+  href,
   id,
   title,
   imageSource,
   artists,
 }: {
+  type: string;
+  href: string;
   id: string;
   title: string;
   imageSource: string;
@@ -14,7 +18,7 @@ function PlaylistCard({
 }) {
   return (
     <Link
-      to={`/playlists/${id}`}
+      to={`/albums/${id}`}
       className="grid grid-cols-1 grid-rows-1 drop-shadow-md"
     >
       <RoundedImage
@@ -30,4 +34,4 @@ function PlaylistCard({
   );
 }
 
-export default PlaylistCard;
+export default AlbumCard;

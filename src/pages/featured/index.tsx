@@ -1,9 +1,9 @@
-import AlbumCard from "../../components/AlbumCard";
+import AlbumCard from "../../features/album/components/AlbumCard";
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
 import Title from "../../components/Title";
-import useAlbumNewReleases from "../../hooks/useAlbumNewReleases";
-import useFeaturedPlaylists from "../../hooks/useFeaturedPlaylists";
+import useAlbumNewReleases from "../../features/featured/hooks/useAlbumNewReleases";
+import useFeaturedPlaylists from "../../features/featured/hooks/useFeaturedPlaylists";
 
 function Featured() {
   const { newReleases } = useAlbumNewReleases();

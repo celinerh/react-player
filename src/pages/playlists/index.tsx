@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
-import PlaylistCard from "../../components/PlaylistCard";
-import usePlaylists from "../../hooks/usePlaylists";
+import PlaylistCard from "../../features/playlist/components/PlaylistCard";
+import usePlaylists from "../../features/playlist/hooks/usePlaylists";
 
 function Playlists() {
   const { playlists } = usePlaylists();
