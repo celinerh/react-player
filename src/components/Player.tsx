@@ -5,6 +5,7 @@ import { usePlayer } from "../contexts/PlayerContext";
 import "../minifiedPlayer.css";
 import "../player.css";
 import useCurrentRoute from "../hooks/useCurrentPath";
+import Header from "./Header";
 
 function Player() {
   const { currentPath } = useCurrentRoute();
@@ -26,69 +27,72 @@ function Player() {
   };
 
   return (
-    <div
-      className={
-        isPlayingPath
-          ? `page-wrapper dark:text-white`
-          : `p-3 bg-red-50 dark:bg-additional dark:text-white ${
-              !player.href && "absolute opacity-0 pointer-events-none"
-            }`
-      }
-    >
-      <Link
-        to="/playing"
-        className={
-          isPlayingPath
-            ? "hidden"
-            : "block w-8 h-1 mx-auto bg-zinc-300 rounded-sm"
-        }
-      ></Link>
-
+    <>
+      {isPlayingPath && <Header showArrow showSearch />}
       <div
         className={
           isPlayingPath
-            ? "flex flex-col gap-6 text-center"
-            : "flex items-center justify-between"
+            ? `page-wrapper dark:text-white`
+            : `p-3 bg-red-50 dark:bg-additional dark:text-white ${
+                !player.href && "absolute opacity-0 pointer-events-none"
+              }`
         }
       >
-        <div>
-          <p className="text-sm font-semibold">{player.name}</p>
-          <p className="text-xs">{player.artists}</p>
-        </div>
+        <Link
+          to="/playing"
+          className={
+            isPlayingPath
+              ? "hidden"
+              : "block w-8 h-1 mx-auto bg-zinc-300 rounded-sm"
+          }
+        ></Link>
 
         <div
           className={
-            isPlayingPath ? "" : "flex justify-end gap-2 mt-3 text-3xl"
+            isPlayingPath
+              ? "flex flex-col gap-6 text-center"
+              : "flex items-center justify-between"
           }
         >
-          <AudioPlayer
-            className={isPlayingPath ? "player" : "minifiedPlayer"}
-            autoPlay={true}
-            src={player.href ?? ""}
-            customVolumeControls={[]} // remove volume controls
-            customAdditionalControls={[]} // remove additional controls: loop button
-            {...(isPlayingPath && { ...playerProps })}
-            {...(!isPlayingPath && { ...minifiedPlayerProps })}
-          />
+          <div>
+            <p className="text-sm font-semibold">{player.name}</p>
+            <p className="text-xs">{player.artists}</p>
+          </div>
 
-          <IoCloseOutline
-            className={isPlayingPath ? "hidden" : ""}
-            onClick={() => {
-              if (!setPlayer) {
-                return;
-              }
+          <div
+            className={
+              isPlayingPath ? "" : "flex justify-end gap-2 mt-3 text-3xl"
+            }
+          >
+            <AudioPlayer
+              className={isPlayingPath ? "player" : "minifiedPlayer"}
+              autoPlay={true}
+              src={player.href ?? ""}
+              customVolumeControls={[]} // remove volume controls
+              customAdditionalControls={[]} // remove additional controls: loop button
+              {...(isPlayingPath && { ...playerProps })}
+              {...(!isPlayingPath && { ...minifiedPlayerProps })}
+            />
 
-              setPlayer({
-                name: null,
-                href: null,
-                artists: null,
-                currentTime: null,
-              });
-            }}
-          />
+            <IoCloseOutline
+              className={isPlayingPath ? "hidden" : ""}
+              onClick={() => {
+                if (!setPlayer) {
+                  return;
+                }
+
+                setPlayer({
+                  name: null,
+                  href: null,
+                  artists: null,
+                  currentTime: null,
+                });
+              }}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
