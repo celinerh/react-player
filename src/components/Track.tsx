@@ -7,11 +7,13 @@ function Track({
   trackURL,
   artists,
   duration,
+  imageSource,
 }: {
   name: string;
   trackURL: string;
   artists: string[];
   duration: number;
+  imageSource: string;
 }) {
   const { setPlayer } = usePlayer();
 
@@ -28,7 +30,7 @@ function Track({
             name: name,
             href: trackURL,
             artists: artists.join(", "),
-            currentTime: 0,
+            imageSource: imageSource,
           });
         }}
       >

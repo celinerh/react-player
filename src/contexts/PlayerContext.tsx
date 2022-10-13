@@ -4,7 +4,7 @@ interface Track {
   name: string | null;
   href: string | null;
   artists: string | null;
-  currentTime: number | null;
+  imageSource: string | null;
 }
 
 const PlayerContext = createContext<{
@@ -15,7 +15,7 @@ const PlayerContext = createContext<{
     name: null,
     href: null,
     artists: null,
-    currentTime: null,
+    imageSource: null,
   },
   setPlayer: null,
 });
@@ -29,7 +29,7 @@ export const PlayerProvider = ({ children }: { children: React.ReactNode }) => {
     name: null,
     href: null,
     artists: null,
-    currentTime: null,
+    imageSource: null,
   });
 
   return (

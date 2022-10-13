@@ -54,6 +54,11 @@ function Player() {
               : "flex items-center justify-between"
           }
         >
+          <img
+            src={player.imageSource ?? ""}
+            alt=""
+            className={isPlayingPath ? "rounded-full w-60 m-auto" : "hidden"}
+          />
           <div>
             <p className="text-sm font-semibold">{player.name}</p>
             <p className="text-xs">{player.artists}</p>
@@ -85,7 +90,7 @@ function Player() {
                   name: null,
                   href: null,
                   artists: null,
-                  currentTime: null,
+                  imageSource: null,
                 });
               }}
             />
