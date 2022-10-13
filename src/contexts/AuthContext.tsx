@@ -64,7 +64,7 @@ export const TokenProvider = ({ children }: { children: React.ReactNode }) => {
     }, (authTokens.expiresIn - 60) * 1000);
 
     return () => clearInterval(interval);
-  }, [authTokens.refreshToken, authTokens.expiresIn]);
+  }, [authTokens, authTokens.refreshToken, authTokens.expiresIn]);
 
   return (
     <AuthContext.Provider
