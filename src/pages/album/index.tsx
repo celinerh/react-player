@@ -5,7 +5,6 @@ import useAlbum from "../../features/album/hooks/useAlbum";
 
 function Album() {
   const { album } = useAlbum();
-  console.log(album);
 
   return (
     <>
