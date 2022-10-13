@@ -36,7 +36,7 @@ const useAlbum = () => {
         setIsPending(false);
         setError(error.message);
       });
-  }, [authTokens?.accessToken]);
+  }, [authTokens?.accessToken, id]);
 
   return { album, error, isPending, setAlbum };
 };

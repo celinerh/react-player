@@ -36,7 +36,7 @@ const useGetCategorysPlaylists = () => {
         setIsPending(false);
         setError(error.message);
       });
-  }, [authTokens?.accessToken]);
+  }, [authTokens?.accessToken, id]);
 
   return { playlists, error, isPending, setPlaylists };
 };

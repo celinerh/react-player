@@ -36,7 +36,7 @@ const usePlaylist = () => {
         setIsPending(false);
         setError(error.message);
       });
-  }, [authTokens?.accessToken]);
+  }, [authTokens?.accessToken, id]);
 
   return { playlist, error, isPending, setPlaylist };
 };
