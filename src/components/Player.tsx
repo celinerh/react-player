@@ -67,7 +67,9 @@ function Player() {
           <img
             src={player.imageSource ?? ""}
             alt=""
-            className={isPlayingPath ? "rounded-full w-60 m-auto" : "hidden"}
+            className={
+              isPlayingPath ? "rounded-full w-60 h-60 m-auto" : "hidden"
+            }
           />
           <div>
             <p className="text-sm font-semibold">{player.name}</p>
