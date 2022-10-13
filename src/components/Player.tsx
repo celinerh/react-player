@@ -71,8 +71,16 @@ function Player() {
               isPlayingPath ? "rounded-full w-60 h-60 m-auto" : "hidden"
             }
           />
-          <div>
-            <p className="text-sm font-semibold">{player.name}</p>
+          <div className={isPlayingPath ? "" : "w-[280px]"}>
+            <p
+              className={
+                isPlayingPath
+                  ? "text-sm font-semibold"
+                  : "text-sm font-semibold truncate"
+              }
+            >
+              {player.name}
+            </p>
             <p className="text-xs">{player.artists}</p>
           </div>
 
