@@ -47,7 +47,7 @@ export const TokenProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     const interval = setInterval(() => {
-      fetch("http://localhost:8888/.netlify/functions/refresh", {
+      fetch(`${process.env.URLL}/.netlify/functions/refresh`, {
         method: "POST",
         body: JSON.stringify({
           refreshToken: authTokens.refreshToken,
