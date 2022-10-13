@@ -1,6 +1,6 @@
 import AudioPlayer from "react-h5-audio-player";
 import { IoCloseOutline, IoPauseOutline, IoPlay } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { usePlayer } from "../contexts/PlayerContext";
 import "../minifiedPlayer.css";
 import "../player.css";
@@ -10,7 +10,6 @@ import Header from "./Header";
 function Player() {
   const { currentPath } = useCurrentRoute();
   const { player, setPlayer } = usePlayer();
-  const navigate = useNavigate();
 
   const isPlayingPath = currentPath === "playing";
 
