@@ -54,9 +54,6 @@
 }
 
 .player .rhap_progress-section {
-  /* display: flex;
-  flex: 3 1 auto;
-  align-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -65,12 +62,6 @@
 .player .rhap_progress-container {
   grid-row: 1;
   grid-column: span 2;
-  /* display: flex;
-  align-items: center;
-  height: 20px;
-  flex: 1 0 auto;
-  align-self: center;
-  margin: 0 calc(10px + 1%);*/
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -89,8 +80,7 @@
 }
 
 .player .rhap_time {
-  color: #333;
-  font-size: 16px;
+  font-size: 14px;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -109,7 +99,7 @@
   height: 100%;
   position: absolute;
   z-index: 2;
-  background-color: #868686;
+  background: linear-gradient(to right, #ff6400, #ee0979);
   border-radius: 2px;
 }
 
@@ -129,13 +119,13 @@
   box-sizing: border-box;
   position: absolute;
   z-index: 3;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   margin-left: -10px;
-  top: -8px;
-  background: #868686;
+  top: -4px;
+  background: #ee0979;
   border-radius: 50px;
-  box-shadow: rgba(134, 134, 134, 0.5) 0 0 5px;
+  box-shadow: 0px 0px 0px 8px rgba(238, 9, 121, 0.2);
 }
 
 .player .rhap_controls-section {
@@ -160,15 +150,14 @@
 }
 
 .player .rhap_main-controls {
-  flex: 0 1 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
   justify-content: center;
   align-items: center;
 }
 
 .player .rhap_main-controls-button {
   margin: 0 3px;
-  color: #868686;
   font-size: 35px;
   width: 35px;
   height: 35px;
@@ -176,8 +165,9 @@
 
 .player .rhap_play-pause-button {
   font-size: 40px;
-  width: 40px;
-  height: 40px;
+  width: fit-content;
+  height: 100%;
+  place-self: center;
 }
 
 .player .rhap_volume-controls {

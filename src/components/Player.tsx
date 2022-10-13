@@ -23,16 +23,27 @@ function Player() {
   };
 
   const playerProps = {
-    //showJumpControls: false,
+    customIcons: {
+      play: (
+        <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-gradientL to-gradientR">
+          <IoPlay className="text-white " />
+        </div>
+      ),
+      pause: (
+        <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-gradientL to-gradientR">
+          <IoPauseOutline className="text-white " />
+        </div>
+      ),
+    },
   };
 
   return (
     <>
-      {isPlayingPath && <Header showArrow showSearch />}
+      {isPlayingPath && <Header showArrow />}
       <div
         className={
           isPlayingPath
-            ? `page-wrapper dark:text-white`
+            ? `page-wrapper dark:text-white text-additional`
             : `p-3 bg-red-50 dark:bg-additional dark:text-white ${
                 !player.href && "absolute opacity-0 pointer-events-none"
               }`
@@ -50,7 +61,7 @@ function Player() {
         <div
           className={
             isPlayingPath
-              ? "flex flex-col gap-6 text-center"
+              ? "flex flex-col gap-16 text-center"
               : "flex items-center justify-between"
           }
         >
