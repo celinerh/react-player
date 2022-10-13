@@ -17,8 +17,6 @@ function Albums() {
             savedAlbums.items.map((album: any) => (
               <AlbumCard
                 key={album.album.id}
-                type="album"
-                href={album.album.href}
                 id={album.album.id}
                 title={album.album.name}
                 imageSource={album.album.images[0].url}

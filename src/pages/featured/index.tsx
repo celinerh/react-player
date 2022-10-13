@@ -4,6 +4,7 @@ import Heading from "../../components/Heading";
 import Title from "../../components/Title";
 import useAlbumNewReleases from "../../features/featured/hooks/useAlbumNewReleases";
 import useFeaturedPlaylists from "../../features/featured/hooks/useFeaturedPlaylists";
+import PlaylistCard from "../../features/playlist/components/PlaylistCard";
 
 function Featured() {
   const { newReleases } = useAlbumNewReleases();
@@ -20,8 +21,6 @@ function Featured() {
             newReleases.albums.items.map((album: any) => (
               <AlbumCard
                 key={album.id}
-                type="album"
-                href={album.href}
                 id={album.id}
                 title={album.name}
                 imageSource={album.images[0].url}
@@ -33,10 +32,8 @@ function Featured() {
         <div className="grid grid-cols-2 gap-6">
           {featuredPlaylists &&
             featuredPlaylists.playlists.items.map((playlist: any) => (
-              <AlbumCard
+              <PlaylistCard
                 key={playlist.id}
-                type="playlist"
-                href={playlist.href}
                 id={playlist.id}
                 title={playlist.name}
                 imageSource={playlist.images[0].url}
