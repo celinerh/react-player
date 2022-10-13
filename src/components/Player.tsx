@@ -81,7 +81,9 @@ function Player() {
             >
               {player.name}
             </p>
-            <p className="text-xs">{player.artists}</p>
+            <p className={isPlayingPath ? "text-xs" : "text-xs truncate"}>
+              {player.artists}
+            </p>
           </div>
 
           <div
